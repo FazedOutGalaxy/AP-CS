@@ -9,6 +9,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Matrices_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new Matrices_Lab();
+	
+	public Matrices_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		int[][] mat = {{2,3,4},{55,66,77},{22,11}};
@@ -23,5 +29,9 @@ public class Matrices_Lab extends ApcsProject {
 			}
 		}
 		return sum;
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 }

@@ -10,7 +10,9 @@ import java.util.Locale;
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public abstract class ApcsProject {
-
+	
+	public ApcsProject() {}
+	
 	public abstract void execute();
 	
 	protected final void printLine(Object... arg0) {

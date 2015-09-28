@@ -12,7 +12,7 @@ import com.alex.apcs.utils.numbers.UtilBasicMath;
 public class Main {
 
 	public static void main(String[] args) {
-		ApcsProjectType.ASCII_ART.execute();
+		ApcsProjectType.STARS_AND_STRIPES.execute();
 	}
 	
 	public static void pr(boolean newLine, String str) {

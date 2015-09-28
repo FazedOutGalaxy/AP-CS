@@ -15,6 +15,7 @@ import com.alex.apcs.projects.NestedLoops_Lab;
 import com.alex.apcs.projects.Strings_Lab;
 import com.alex.apcs.projects.Tests;
 import com.alex.apcs.projects.Variables;
+import com.alex.apcs.projects.oop.StarsAndStripes;
 
 /**
  * 
@@ -36,7 +37,8 @@ public enum ApcsProjectType {
 	ALPHABET(new Alphabet()),
 	INPUT(new Input()),
 	ASCII_BOX(new AsciiBox()),
-	ASCII_BOX2(new AsciiBox2())
+	ASCII_BOX2(new AsciiBox2()),
+	STARS_AND_STRIPES(new StarsAndStripes());
 	;
 	
 	private ApcsProject project;

@@ -13,6 +13,12 @@ import com.alex.apcs.utils.random.UtilRandomNumbers;
  */
 public class Variables extends ApcsProject {
 
+	private static ApcsProject instance;
+	
+	public Variables() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		//define 1 variable of each of the
@@ -23,16 +29,16 @@ public class Variables extends ApcsProject {
 		
 		//integer variables
 		byte byteOne = 127;
-		short shortOne = UtilRandomNumbers.getRandomShort((short) 0, Short.MAX_VALUE);
-		int intOne = UtilRandomNumbers.getRandomInteger(1, Integer.MAX_VALUE);
-		long longOne = UtilRandomNumbers.getRandomLong(1L, Long.MAX_VALUE);
+		short shortOne = UtilRandomNumbers.getRandomShort((short) 1, (short) 9);
+		int intOne = UtilRandomNumbers.getRandomInteger(10, 99);
+		long longOne = UtilRandomNumbers.getRandomLong(10, 99);
 		
 		//decimal variables
-		float floatOne = UtilRandomNumbers.getRandomFloat(1.0F, 50.0F);
-		double doubleOne = UtilRandomNumbers.getRandomDouble(1.0D, 50.0D);
+		float floatOne = 21.0F;
+		double doubleOne = 51.0D;
 		
 		//other integer types
-		char charOne = UtilRandomChar.getRandomChar(1, 100);
+		char charOne = 'A';
 		
 		//other types
 		boolean booleanOne = UtilRandomBoolean.getRandomBoolean();
@@ -45,31 +51,44 @@ public class Variables extends ApcsProject {
 			stringOne += c;
 		}
 		
+		long intSum = byteOne + shortOne + intOne + longOne;
+		double doubleSum = floatOne + doubleOne;
+		
 		//output your information here
 		printLine("/////////////////////////////////");
-		printLine("*Alex Chiang             09/11/15*");
+		printLine("*Alex Chiang            09/11/15*");
 		printLine("*                               *");
-		printLine("*        integer types          *");
+		printLine("*         integer types         *");
 		printLine("*                               *");
 		printLine("*8 bit - byteOne = " + byteOne + "\t\t*");
 		printLine("*16 bit - shortOne = " + shortOne + "\t\t*");
 		printLine("*32 bit - intOne = " + intOne + "\t\t*");
 		printLine("*64 bit - longOne = " + longOne + "\t\t*");
 		printLine("*                               *");
-		printLine("*          real  types          *");
+		printLine("*         real  types           *");
 		printLine("*                               *");
-		printLine("*32 bit - floatOne = " + floatOne + "\t\t*");
-		printLine("*64 bit - doubleOne = " + doubleOne + "\t\t*");
+		printLine("*32 bit - floatOne = " + floatOne + "\t*");
+		printLine("*64 bit - doubleOne = " + doubleOne + "\t*");
 		printLine("*                               *");
-		printLine("*       other integer types     *");
+		printLine("*      other integer types      *");
 		printLine("*                               *");
 		printLine("*16 bit - charOne = " + charOne + "\t\t*");
 		printLine("*                               *");
-		printLine("*           other types         *");
+		printLine("*         other types           *");
 		printLine("*                               *");
 		printLine("*booleanOne = " + booleanOne + "\t\t*");
-		printLine("*stringOne = " + stringOne + "\t\t*");
+		printLine("*stringOne = " + stringOne + "\t*");
+		printLine("*                               *");
+		printLine("*         number sums           *");
+		printLine("*                               *");
+		printLine("*all int types sums = " + intSum + "\t*");
+		printLine("*all real types sums = " + doubleSum + "\t*");
 		printLine("/////////////////////////////////");
+	}
+	
+	public static void main(String[] args) {
+		new Variables();
+		instance.execute();
 	}
 
 }

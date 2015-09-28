@@ -11,6 +11,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Tests extends ApcsProject {
 
+	private static ApcsProject instance;
+	
+	public Tests() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		int x = 4;
@@ -40,5 +46,10 @@ public class Tests extends ApcsProject {
 		add(r, 9);
 		add(r, 1, 7);
 		print(r);
+	}
+	
+	public static void main(String[] args) {
+		new Tests();
+		instance.execute();
 	}
 }

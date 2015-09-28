@@ -8,7 +8,13 @@ import com.alex.apcs.abstracts.ApcsProject;
  *
  */
 public class Alphabet extends ApcsProject {
-
+	
+	private static ApcsProject instance = new Alphabet();
+	
+	public Alphabet() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		char[] ca = new char[26];
@@ -19,6 +25,10 @@ public class Alphabet extends ApcsProject {
 			if (ca[ca.length - 1] == c) print(c);
 			else print(c + ", ");
 		}
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 
 }

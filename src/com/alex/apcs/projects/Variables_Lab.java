@@ -9,6 +9,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Variables_Lab extends ApcsProject {
 
+	private static ApcsProject instance;
+	
+	public Variables_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		//define 1 variable of each of the
@@ -28,6 +34,11 @@ public class Variables_Lab extends ApcsProject {
 		printLine("*        integer types          *");
 		printLine("*                               *");
 		printLine("*8 bit - byteOne = " + byteOne + "\t\t*");
+	}
+	
+	public static void main(String[] args) {
+		new Variables_Lab();
+		instance.execute();
 	}
 
 }

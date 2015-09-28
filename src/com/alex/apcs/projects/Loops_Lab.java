@@ -11,6 +11,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Loops_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new Loops_Lab();
+	
+	public Loops_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		 Scanner kb = new Scanner( System.in );
@@ -43,5 +49,9 @@ public class Loops_Lab extends ApcsProject {
 	     }
 	     printLine();
 	     kb.close();
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 }

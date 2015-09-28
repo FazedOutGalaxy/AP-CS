@@ -9,6 +9,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Array_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new Array_Lab();
+	
+	public Array_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		int[] rayOne = new int[15];
@@ -34,6 +40,10 @@ public class Array_Lab extends ApcsProject {
 		for (int c = (rayOne.length - 1); c > -1; c--) {
 			print("" + rayOne[c] + " ");
 		}
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 
 }

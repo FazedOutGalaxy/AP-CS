@@ -11,6 +11,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class NestedLoops_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new NestedLoops_Lab();
+	
+	public NestedLoops_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		Scanner kb = new Scanner(System.in);
@@ -27,6 +33,11 @@ public class NestedLoops_Lab extends ApcsProject {
         }
 
         kb.close();
+	}
+	
+	public static void main(String[] args) {
+		new NestedLoops_Lab();
+		instance.execute();
 	}
 
 }

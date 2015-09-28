@@ -13,6 +13,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Lists_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new Lists_Lab();
+	
+	public Lists_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		List<Integer> numbers = new ArrayList<Integer>();
@@ -29,5 +35,9 @@ public class Lists_Lab extends ApcsProject {
     		sum += i;
     	}
 		return sum;
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 }

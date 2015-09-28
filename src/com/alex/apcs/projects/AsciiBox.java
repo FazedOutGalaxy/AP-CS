@@ -9,6 +9,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class AsciiBox extends ApcsProject {
 
+	private static ApcsProject instance = new AsciiBox();
+	
+	public AsciiBox() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		printLine("Alex Chiang \t  9/15/2015 \n\n" );
@@ -29,6 +35,10 @@ public class AsciiBox extends ApcsProject {
 				}
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 
 }

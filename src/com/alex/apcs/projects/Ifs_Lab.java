@@ -11,6 +11,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Ifs_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new Ifs_Lab();
+	
+	public Ifs_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		Scanner kb = new Scanner(System.in);
@@ -26,4 +32,7 @@ public class Ifs_Lab extends ApcsProject {
         kb.close();
 	}
 
+	public static void main(String[] args) {
+		instance.execute();
+	}
 }

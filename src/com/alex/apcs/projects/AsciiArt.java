@@ -9,6 +9,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class AsciiArt extends ApcsProject {
 
+	private static ApcsProject instance = new AsciiArt();
+	
+	public AsciiArt() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		printLine("Alex Chiang\t9/15/2015");
@@ -81,6 +87,10 @@ public class AsciiArt extends ApcsProject {
 		printLine();
 		printLine(bars);
 		printLine();
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 
 }

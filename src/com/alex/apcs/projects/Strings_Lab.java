@@ -11,6 +11,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Strings_Lab extends ApcsProject {
 
+	private static ApcsProject instance = new Strings_Lab();
+	
+	public Strings_Lab() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		Scanner kb = new Scanner( System.in );
@@ -34,6 +40,11 @@ public class Strings_Lab extends ApcsProject {
         printLine("Reverse: " + rev);
         if (vowel) printLine("It has a lowercase vowel!");
         kb.close();
+	}
+	
+	public static void main(String[] args) {
+		new Strings_Lab();
+		instance.execute();
 	}
 
 }

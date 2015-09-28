@@ -11,6 +11,12 @@ import com.alex.apcs.abstracts.ApcsProject;
  */
 public class Input extends ApcsProject {
 
+	private static ApcsProject instance = new Input();
+	
+	public Input() {
+		instance = this;
+	}
+	
 	@Override
 	public void execute() {
 		Scanner keyboard = new Scanner(System.in);
@@ -43,7 +49,20 @@ public class Input extends ApcsProject {
 		printLine("float two = " + floatTwo);
 		printLine("short one = " + shortOne);
 		printLine("short two = " + shortTwo);
+		printLine();
+		printLine("*         number sums           *");
+		printLine();
+		long intSum = (intOne + intTwo) + (shortOne + shortTwo);
+		double doubleSum = (doubleOne + doubleTwo) + (floatOne + floatTwo);
+		double total = intSum + doubleSum;
+		printLine("all int types sums = " + intSum + "");
+		printLine("all real types sums = " + doubleSum + "");
+		printLine("total sum = " + total);
 		keyboard.close();
+	}
+	
+	public static void main(String[] args) {
+		instance.execute();
 	}
 
 }
