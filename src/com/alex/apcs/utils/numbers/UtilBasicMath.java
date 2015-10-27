@@ -28,11 +28,11 @@ public class UtilBasicMath {
 	}
 	
 	public static int roundDown(double arg0) {
-		return ((int) Math.ceil(arg0));
+		return ((int) Math.floor(arg0));
 	}
 	
 	public static int roundUp(double arg0) {
-		return ((int) Math.floor(arg0));
+		return ((int) Math.ceil(arg0));
 	}
 	
 	public static double roundDownReturnDouble(double arg0) {
@@ -74,4 +74,33 @@ public class UtilBasicMath {
 		}
 		return sum;
 	}
+	
+	public static boolean isInt(double arg0) {
+		return ((arg0 == Math.floor(arg0)) && (!Double.isInfinite(arg0)));
+	}
+	
+	public static boolean isPositive(double arg0) {
+		return (arg0 > 0.0D);
+	}
+	
+	public static boolean isNegative(double arg0) {
+		return !isPositive(arg0);
+	}
+	
+	public static boolean isSingular(double arg0) {
+		return (arg0 == 0.0D);
+	}
+	
+	/*public static boolean isSingular(long arg0) {
+		return isSingular(arg0);
+	}*/
+	
+	public static boolean isMultiple(double arg0) {
+		return !isSingular(arg0);
+	}
+	
+	public static boolean isMultiple(long arg0) {
+		return !isSingular(arg0);
+	}
+	
 }

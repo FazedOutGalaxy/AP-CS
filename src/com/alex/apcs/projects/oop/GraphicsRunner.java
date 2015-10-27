@@ -6,6 +6,12 @@ import com.alex.apcs.abstracts.EasyJFrameApcsProject;
 import com.alex.apcs.enums.oop.ApcsOopProjectType;
 import com.alex.apcs.listeners.OnClick;
 
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
+@SuppressWarnings("unused")
 public class GraphicsRunner extends EasyJFrameApcsProject {
 	
 	private static final GraphicsRunner instance = new GraphicsRunner();
@@ -22,10 +28,23 @@ public class GraphicsRunner extends EasyJFrameApcsProject {
 	public void execute() {
 		addMouseListener(new OnClick());
 		setSize(WIDTH, HEIGHT);
-		getContentPane().add(ApcsOopProjectType.ROBOT.getProject());
+		
+		//Smiley Face. Uncomment to run, then comment out all others. Re-comment to disable.
+		//getContentPane().add(new S);
+		
+		//Smiley Face. Uncomment to run, then comment out all others. Re-comment to disable.
+		//getContentPane().add(ApcsOopProjectType.SMILEY_FACE.getProject());
+		
+		//Big House. Uncomment to run, then comment out all others. Re-comment to disable.
+		//getContentPane().add(ApcsOopProjectType.BIG_HOUSE.getProject());
+		
+		//Robot. Uncomment to run, then comment out all others. Re-comment to disable.
+		//getContentPane().add(ApcsOopProjectType.ROBOT.getProject());
+		
+		//Shapes. Uncomment to run, then comment out all others. Re-comment to disable.
+		//getContentPane().add(ApcsOopProjectType.SHAPES.getProject());
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//house.paint(getGraphics());
 	}
 	
 	public static void main(String args[]) {

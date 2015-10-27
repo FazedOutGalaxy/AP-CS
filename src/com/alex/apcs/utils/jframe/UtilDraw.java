@@ -27,9 +27,10 @@ public class UtilDraw {
 	}
 	
 	public void drawOval(Graphics2DLocation location, Graphics2DSize size, boolean fill) {
-		graphics.drawOval(location.getX(), location.getY(), size.getWidth(), size.getHeight());
 		if (fill) {
 			graphics.fillOval(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+		} else {
+			graphics.drawOval(location.getX(), location.getY(), size.getWidth(), size.getHeight());
 		}
 	}
 	
@@ -38,23 +39,26 @@ public class UtilDraw {
 	}
 	
 	public void drawArc(Graphics2DLocation loc, Graphics2DSize size, int startAngle, int arcAngle, boolean fill) {
-		graphics.drawArc(loc.getX(), loc.getY(), size.getWidth(), size.getHeight(), startAngle, arcAngle);
 		if (fill) {
 			graphics.fillArc(loc.getX(), loc.getY(), size.getWidth(), size.getHeight(), startAngle, arcAngle);
+		} else {
+			graphics.drawArc(loc.getX(), loc.getY(), size.getWidth(), size.getHeight(), startAngle, arcAngle);
 		}
 	}
 	
 	public void drawRect(Graphics2DLocation location, Graphics2DSize size, boolean fill) {
-		graphics.drawRect(location.getX(), location.getY(), size.getWidth(), size.getHeight());
 		if (fill) {
 			graphics.fillRect(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+		} else {
+			graphics.drawRect(location.getX(), location.getY(), size.getWidth(), size.getHeight());
 		}
 	}
 	
 	public void drawPolygon(Graphics2DPolygon polygon, boolean fill) {
-		graphics.drawPolygon(polygon.getPolygon());
 		if (fill) {
 			graphics.fillPolygon(polygon.getPolygon());
+		} else {
+			graphics.drawPolygon(polygon.getPolygon());
 		}
 	}
 	
@@ -63,62 +67,67 @@ public class UtilDraw {
 	}
 	
 	/* Draw with param color. */
-	public void drawCircle(Color color, Graphics2DLocation location, int radius, boolean fill) {
-		drawOval(color, location, Graphics2DSize.forSize(radius, radius), fill);
+	public void drawCircle(Color color, Graphics2DLocation location, long l, boolean fill) {
+		drawOval(color, location, Graphics2DSize.forSize((int) l, (int) l), fill);
 	}
 	
 	public void drawOval(Color color, Graphics2DLocation location, Graphics2DSize size, boolean fill) {
 		Color c = graphics.getColor();
-		graphics.setColor(color);
-		graphics.drawOval(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+		setNextDrawColor(color);
 		if (fill) {
 			graphics.fillOval(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+		} else {
+			graphics.drawOval(location.getX(), location.getY(), size.getWidth(), size.getHeight());
 		}
-		graphics.setColor(c);
+		setNextDrawColor(c);
 	}
 	
 	public void drawString(Color color, String str, Graphics2DLocation location) {
 		Color c = graphics.getColor();
-		graphics.setColor(color);
+		setNextDrawColor(color);
 		graphics.drawString(str, location.getX(), location.getY());
-		graphics.setColor(c);
+		setNextDrawColor(c);
 	}
 	
 	public void drawArc(Color color, Graphics2DLocation loc, Graphics2DSize size, int startAngle, int arcAngle, boolean fill) {
 		Color c = graphics.getColor();
-		graphics.setColor(color);
-		graphics.drawArc(loc.getX(), loc.getY(), size.getWidth(), size.getHeight(), startAngle, arcAngle);
+		setNextDrawColor(color);
 		if (fill) {
 			graphics.fillArc(loc.getX(), loc.getY(), size.getWidth(), size.getHeight(), startAngle, arcAngle);
+		} else {
+			graphics.drawArc(loc.getX(), loc.getY(), size.getWidth(), size.getHeight(), startAngle, arcAngle);
 		}
-		graphics.setColor(c);
+		setNextDrawColor(c);
 	}
 	
 	public void drawRect(Color color, Graphics2DLocation location, Graphics2DSize size, boolean fill) {
 		Color c = graphics.getColor();
-		graphics.setColor(color);
-		graphics.drawRect(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+		setNextDrawColor(color);
 		if (fill) {
 			graphics.fillRect(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+		} else {
+			graphics.drawRect(location.getX(), location.getY(), size.getWidth(), size.getHeight());
 		}
 		graphics.setColor(c);
+		setNextDrawColor(c);
 	}
 	
 	public void drawPolygon(Color color, Graphics2DPolygon polygon, boolean fill) {
 		Color c = graphics.getColor();
-		graphics.setColor(color);
-		graphics.drawPolygon(polygon.getPolygon());
+		setNextDrawColor(color);
 		if (fill) {
 			graphics.fillPolygon(polygon.getPolygon());
+		} else {
+			graphics.drawPolygon(polygon.getPolygon());
 		}
-		graphics.setColor(c);
+		setNextDrawColor(c);
 	}
 	
 	public void drawLine(Color color, Graphics2DLocation firstLocation, Graphics2DLocation secondLocation) {
 		Color c = graphics.getColor();
-		graphics.setColor(color);
+		setNextDrawColor(color);
 		graphics.drawLine(firstLocation.getX(), firstLocation.getY(), secondLocation.getX(), secondLocation.getY());
-		graphics.setColor(c);
+		setNextDrawColor(c);
 	}
 	
 	/* Set next draw color. */

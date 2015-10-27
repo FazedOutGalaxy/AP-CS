@@ -4,9 +4,7 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 
 import com.alex.apcs.enums.Color;
-import com.alex.apcs.instantiatables.Graphics2DIntSet;
 import com.alex.apcs.instantiatables.Graphics2DLocation;
-import com.alex.apcs.instantiatables.Graphics2DPolygon;
 import com.alex.apcs.instantiatables.Graphics2DSize;
 import com.alex.apcs.utils.jframe.UtilDraw;
 

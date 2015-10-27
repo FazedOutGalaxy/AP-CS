@@ -10,6 +10,7 @@ import com.alex.apcs.exceptions.DivideByZero;
  * @author Alex Chiang <agentleader1@gmail.com>
  *
  */
+@Deprecated
 public class ExManager {
 
 	public static void throwException(APCSExceptionType type, String reason) {
@@ -20,6 +21,10 @@ public class ExManager {
 			break;
 		case DIVIDE_BY_ZERO:
 			ex = new DivideByZero(reason);
+			break;
+		case DEPLETED_METHOD:
+			break;
+		default:
 			break;
 		}
 		throw ex;
@@ -33,6 +38,10 @@ public class ExManager {
 			break;
 		case DIVIDE_BY_ZERO:
 			ex = new DivideByZero();
+			break;
+		case DEPLETED_METHOD:
+			break;
+		default:
 			break;
 		}
 		throw ex;

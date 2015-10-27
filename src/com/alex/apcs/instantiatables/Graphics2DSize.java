@@ -5,8 +5,8 @@ public class Graphics2DSize {
 	private int width;
 	private int height;
 	
-	public static Graphics2DSize forSize(int x, int y) {
-		return new Graphics2DSize(x, y);
+	public static Graphics2DSize forSize(int width, int height) {
+		return new Graphics2DSize(width, height);
 	}
 	
 	private Graphics2DSize(int width, int height) {
@@ -20,5 +20,9 @@ public class Graphics2DSize {
 	
 	public int getHeight() {
 		return height;
+	}
+	
+	public Graphics2DSize multiply(double arg0) {
+		return Graphics2DSize.forSize((int) Math.round(arg0 * width), (int) Math.round(arg0 * height));
 	}
 }

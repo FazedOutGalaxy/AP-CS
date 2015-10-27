@@ -8,5 +8,6 @@ package com.alex.apcs.exceptions;
 public enum APCSExceptionType {
 
 	ALEX_TOO_SWAG,
-	DIVIDE_BY_ZERO
+	DIVIDE_BY_ZERO,
+	DEPLETED_METHOD;
 }
