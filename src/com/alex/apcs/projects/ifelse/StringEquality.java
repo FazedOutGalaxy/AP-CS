@@ -26,13 +26,13 @@ public class StringEquality {
 		this.b = b;
 	}
 	
-	public boolean checkEquality() {
-		return a.equals(b);
+	public boolean checkEquality(boolean ignoreCase) {
+		return ((ignoreCase) ? a.equalsIgnoreCase(b) : a.equals(b));
 	}
 	
 	@Override
 	public String toString() {
-		return a + " does " + ((!checkEquality()) ? "not" : "") + " have the same letters as " + b + "\n";
+		return a + " does " + ((!checkEquality(true)) ? "not" : "") + " have the same letters as " + b + "\n";
 	}
 	
 }
