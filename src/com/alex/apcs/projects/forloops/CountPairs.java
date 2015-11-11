@@ -7,9 +7,12 @@ package com.alex.apcs.projects.forloops;
  */
 public class CountPairs {
 	
-	private static int count = 0;
-	
 	public static int pairCounter(String str) {
+		int count = 0;
+		for (int index = 1; index <= str.length() - 1; index++) {
+			if (str.charAt(index) == str.charAt(index - 1))
+				count++;
+		}
 		return count;
 	}
 }
