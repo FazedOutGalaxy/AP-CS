@@ -14,7 +14,7 @@ public class VowelCounterRunner extends ApcsProject {
 	
 	@Override
 	public void execute() {
-		System.out.println(VowelCounter.getNumberString("abcdef"));
+		System.out.println(VowelCounter.getNumberString("AbcdEf"));
 		System.out.println(VowelCounter.getNumberString("hhhhhhh"));
 		System.out.println(VowelCounter.getNumberString("aaaaaaa"));
 		System.out.println(VowelCounter

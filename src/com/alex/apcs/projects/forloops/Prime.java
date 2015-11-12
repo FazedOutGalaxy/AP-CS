@@ -24,17 +24,17 @@ public class Prime {
 	}
 
 	public boolean isPrime() {
-		for (int i = 0; i < number; i++) {
+		for (int i = 2; i < number; i++) {
 			if (number % i == 0)
-				return true;
+				return false;
 		}
-		return false;
+		return true;
 	}
 
 	public String toString() {
 		if (isPrime())
-			return "";
+			return number + " is prime.";
 		else
-			return "";
+			return number + " is not prime.";
 	}
 }

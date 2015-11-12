@@ -26,7 +26,7 @@ public class LoopStats {
 
 	public int getEvenCount() {
 		int total = 0;
-		for (int i = start; start <= stop; start++) {
+		for (int i = start; i <= stop; i++) {
 			if (UtilBasicMath.isEven(i)) {
 				total++;
 			}
@@ -36,7 +36,7 @@ public class LoopStats {
 
 	public int getOddCount() {
 		int total = 0;
-		for (int i = start; start <= stop; start++) {
+		for (int i = start; i <= stop; i++) {
 			if (UtilBasicMath.isOdd(i)) {
 				total++;
 			}
@@ -46,7 +46,7 @@ public class LoopStats {
 
 	public int getTotal() {
 		int sum = 0;
-		for (int i = start; start <= stop; start++) {
+		for (int i = start; i <= stop; i++) {
 			sum += i;
 		}
 		return sum;
