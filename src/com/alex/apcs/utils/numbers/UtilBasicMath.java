@@ -11,11 +11,11 @@ public class UtilBasicMath {
 	}
 	
 	public static boolean isEven(long arg0) {
-		return (isEven(((double) arg0)));
+		return arg0 % 2 == 0;
 	}
 	
 	public static boolean isOdd(long arg0) {
-		return (isOdd(((double) arg0)));
+		return arg0 % 2 != 0;
 	}
 	
 	public static double round(double arg0, int places) {
