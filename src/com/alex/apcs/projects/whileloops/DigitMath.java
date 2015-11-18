@@ -7,16 +7,14 @@ package com.alex.apcs.projects.whileloops;
  */
 public class DigitMath {
 	private static int countDigits(int number) {
-		int sum = 0;
-		return sum;
+		return DigitCounter.countDigits(number);
 	}
 
 	private static int sumDigits(int number) {
-		int sum = 0;
-		return sum;
+		return DigitAdder.sumDigits(number);
 	}
 
 	public static double averageDigits(int number) {
-		return 0.0;
+		return sumDigits(number) / countDigits(number);
 	}
 }

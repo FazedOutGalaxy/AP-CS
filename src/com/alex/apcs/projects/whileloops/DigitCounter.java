@@ -6,8 +6,8 @@ package com.alex.apcs.projects.whileloops;
  *
  */
 public class DigitCounter {
+	
 	public static int countDigits(int number) {
-		int sum = 0;
-		return sum;
+		return String.valueOf(number).replace("-", "").length();
 	}
 }

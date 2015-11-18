@@ -1,31 +1,25 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+package com.alex.apcs.projects.whileloops;
 
-import static java.lang.System.*;
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
+class StringRemover {
+	private String sentence;
+	private String remove;
 
-class StringRemover
-{
-   private String sentence;
-   private String remove;
+	// add in constructors
 
-	//add in constructors
-	
-
-	public void setRemover(String s, String rem)
-	{
+	public void setRemover(String s, String rem) {
 	}
 
-	public String removeStrings()
-	{
+	public String removeStrings() {
 		String cleaned = sentence;
 		return cleaned;
 	}
 
-	public String toString()
-	{
+	public String toString() {
 		return "";
 	}
 }
