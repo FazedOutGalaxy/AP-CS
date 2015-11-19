@@ -1,17 +1,40 @@
 package com.alex.apcs.projects.whileloops.runners;
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
 
-import static java.lang.System.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-public class StringRemoverRunner
-{
-	public static void main( String args[] )
-	{
-		//add test cases	
-											
+import com.alex.apcs.abstracts.ApcsProject;
+import com.alex.apcs.projects.whileloops.StringRemover;
+
+@SuppressWarnings("unused")
+public class StringRemoverRunner extends ApcsProject {
+
+	private static final StringRemoverRunner instance = new StringRemoverRunner();
+	private static final Set<String> params = new HashSet<String>();
+	
+	public static void main(String[] args) {
+		if (params.isEmpty())
+			init();
+		instance.execute();
 	}
+	
+	private static final synchronized void init() {
+		params.clear();
+		params.add("xR");
+	}
+	
+	@Override
+	public void execute() {
+		StringRemover sr = new StringRemover();
+		sr.setRemover("xR-MxR-MHelloxR-M", "R-M");
+		printLine(sr);
+		sr.setRemover("sxsssxssxsxsxssexssxsesss", "xs");
+		printLine(sr);
+		sr.setRemover("fuxqwexqwertyxqwexqwertyrtyxqwertyrtyn", "qwerty");
+		printLine(sr);
+	}
+
+	
+
 }

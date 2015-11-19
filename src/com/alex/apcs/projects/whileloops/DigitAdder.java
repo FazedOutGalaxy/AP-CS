@@ -1,17 +1,13 @@
 package com.alex.apcs.projects.whileloops;
 
-/**
- * 
- * @author Alex Chiang <agentleader1@gmail.com>
- *
- */
 public class DigitAdder {
-	
+
 	public static int sumDigits(int number) {
 		int sum = 0;
-		while (number > 0) {
-			sum += (number % 10);
-			number /= number;
+		int temp = number;
+		while (temp > 0) {
+			sum += (temp % 10);
+			temp /= 10;
 		}
 		return sum;
 	}
