@@ -1,5 +1,7 @@
 package com.alex.apcs.enums;
 
+import com.alex.apcs.utils.random.UtilRandomNumbers;
+
 public final class Color {
 
 	public static final java.awt.Color RED = java.awt.Color.RED;
@@ -21,7 +23,14 @@ public final class Color {
 	public static final java.awt.Color LIGHT_BROWN = BROWN.brighter();
 	public static final java.awt.Color RED_BROWN = getFromRGB(165, 42, 42);
 	
+	public static final java.awt.Color[] values = { RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, MAGENTA, 
+		LIGHT_GRAY, DARK_GRAY, BLACK, WHITE, TAN, DARK_GREEN, BROWN, LIGHT_BROWN, RED_BROWN};
+	
 	public static java.awt.Color getFromRGB(int r, int g, int b) {
 		return new java.awt.Color(r, g, b);
+	}
+	
+	public static java.awt.Color getRandomColor() {
+		return values[UtilRandomNumbers.getRandomInteger(0, values.length - 1)];
 	}
 }

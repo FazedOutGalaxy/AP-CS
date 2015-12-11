@@ -1,6 +1,7 @@
 package com.alex.apcs.utils.jframe;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import com.alex.apcs.instantiatables.Graphics2DLocation;
@@ -36,6 +37,13 @@ public class UtilDraw {
 	
 	public void drawString(String str, Graphics2DLocation location) {
 		graphics.drawString(str, location.getX(), location.getY());
+	}
+	
+	public void drawString(Font font, String str, Graphics2DLocation location) {
+		Font cF = getFont();
+		setNextTextFont(font);
+		drawString(str, location);
+		setNextTextFont(cF);
 	}
 	
 	public void drawArc(Graphics2DLocation loc, Graphics2DSize size, int startAngle, int arcAngle, boolean fill) {
@@ -89,6 +97,16 @@ public class UtilDraw {
 		setNextDrawColor(c);
 	}
 	
+	public void drawString(Color color, Font font, String str, Graphics2DLocation location) {
+		Color c = graphics.getColor();
+		setNextDrawColor(color);
+		Font cF = getCurrentTextFont();
+		setNextTextFont(font);
+		graphics.drawString(str, location.getX(), location.getY());
+		setNextTextFont(cF);
+		setNextDrawColor(c);
+	}
+	
 	public void drawArc(Color color, Graphics2DLocation loc, Graphics2DSize size, int startAngle, int arcAngle, boolean fill) {
 		Color c = graphics.getColor();
 		setNextDrawColor(color);
@@ -131,8 +149,10 @@ public class UtilDraw {
 	}
 	
 	/* Set next draw color. */
-	public void setNextDrawColor(Color color) {
+	public Color setNextDrawColor(Color color) {
+		Color ret = graphics.getColor();
 		graphics.setColor(color);
+		return ret;
 	}
 	
 	public void setNextColor(Color color) {
@@ -143,12 +163,33 @@ public class UtilDraw {
 		setNextDrawColor(color);
 	}
 	
+	/* Set next text font. */
+	public Font setNextTextFont(Font font) {
+		Font ret = graphics.getFont();
+		graphics.setFont(font);
+		return ret;
+	}
+	
+	public void setNextFont(Font font) {
+		setNextTextFont(font);
+	}
+	
+	public void setFont(Font font) {
+		setNextTextFont(font);
+	}
+	
 	/* Return Statements */
 	public Graphics getGraphics() { return graphics; }
+	
 	public Color getCurrentDrawColor() { return graphics.getColor(); }
 	public Color getCurrentColor() { return getCurrentDrawColor(); }
 	public Color getDrawColor() { return getCurrentColor(); }
 	public Color getColor() { return getDrawColor(); }
+	
+	public Font getCurrentTextFont() { return graphics.getFont(); }
+	public Font getCurrentFont() { return getCurrentTextFont(); }
+	public Font getTextFont() { return getCurrentTextFont(); }
+	public Font getFont() { return getCurrentTextFont(); }
 	
 	/* Finalize */
 	/**
