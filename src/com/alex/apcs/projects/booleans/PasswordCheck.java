@@ -19,7 +19,7 @@ public class PasswordCheck extends ApcsProject {
 	
 	public PasswordCheck() {
 		scan = new Scanner(System.in);
-		password = "413x 1z $w4g";
+		password = "Alex";
 	}
 	
 	public PasswordCheck(String password) {

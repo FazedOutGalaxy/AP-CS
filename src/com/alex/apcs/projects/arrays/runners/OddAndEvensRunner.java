@@ -12,17 +12,17 @@ import com.alex.apcs.projects.arrays.OddsAndEvens;
  * 
  */
 public class OddAndEvensRunner extends ApcsProject {
-	
+
 	private static final OddAndEvensRunner instance = new OddAndEvensRunner();
 	private static final int[][] params = new int[3][];
-	
+
 	public static void main(String args[]) {
-		params[0] = new int[] {2, 4, 6, 8, 10, 12, 14};
-		params[1] = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
-		params[2] = new int[] {2, 10, 20, 21, 23, 24, 40, 55, 60, 61};
+		params[0] = new int[] { 2, 4, 6, 8, 10, 12, 14 };
+		params[1] = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		params[2] = new int[] { 2, 10, 20, 21, 23, 24, 40, 55, 60, 61 };
 		instance.execute();
 	}
-	
+
 	@Override
 	public void execute() {
 		Scanner scan = new Scanner(System.in);

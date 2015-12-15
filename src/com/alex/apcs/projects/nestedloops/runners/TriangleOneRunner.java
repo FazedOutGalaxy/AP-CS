@@ -27,7 +27,8 @@ public class TriangleOneRunner extends ApcsProject {
 
 			print("Do you want to enter more data? ");
 			choice = scan.next();
-		} while (choice.equals("Y") || choice.equals("y"));
+		} while (choice.equalsIgnoreCase("Y"));
+		scan.close();
 	}
 	
 	

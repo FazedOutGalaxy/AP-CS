@@ -52,5 +52,6 @@ public class RPSRunner extends ApcsProject {
 				break;
 			printLine();
 		}
+		scan.close();
 	}
 }
