@@ -1,5 +1,7 @@
 package com.alex.apcs.projects.sortsearch;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Alex Chiang <agentleader1@gmail.com>
@@ -25,6 +27,7 @@ public class NumberSorter {
 			index--;
 			number /= 10;
 		}
+		Arrays.sort(sorted);
 		return sorted;
 	}
 }
