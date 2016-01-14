@@ -58,13 +58,14 @@ public class ExpressionSolverRunner extends ApcsProject {
 
 	@Override
 	public void execute() {
-		ExpressionSolver es = new ExpressionSolver();
-		// es.setIsIntegerDivision(false);
+		ExpressionSolver es = new ExpressionSolver("2 * 3 + 8 / 3 - 4");
+		printLine(es);
+		/* es.setIsIntegerDivision(false);
 		Iterator<String> iter = expressions.iterator();
 		while (iter.hasNext()) {
 			es.setExpression(iter.next());
 			es.execute();
 			printLine(es);
-		}
+		}*/
 	}
 }

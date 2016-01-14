@@ -34,5 +34,6 @@ public class LetterBoxesRunner extends ApcsProject {
 			c = scan.next().charAt(0);
 			printLine();
 		} while (c == 'Y' || c == 'y');
+		scan.close();
 	}
 }

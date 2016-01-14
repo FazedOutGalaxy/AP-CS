@@ -37,5 +37,6 @@ public class WordPrinterRunner extends ApcsProject {
 			
 			choice = keyboard.next().charAt(0);
 		} while (choice == 'Y' || choice == 'y');
+		keyboard.close();
 	}
 }

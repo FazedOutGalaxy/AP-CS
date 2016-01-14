@@ -107,6 +107,7 @@ public class MadLib extends ApcsProject {
 				else
 					to += next + ".";
 		}
+		scan.close();
 		return to;
 	}
 	

@@ -36,5 +36,6 @@ public class TriangleWordRunner extends ApcsProject {
 			c = scan.next().charAt(0);
 			firstRun = false;
 		} while (c == 'Y' || c == 'y');
+		scan.close();
 	}
 }
