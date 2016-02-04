@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>winter_scene</label>
+	</settings>
+	<users>
+		<user>
+			<path>winter_scene.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>winter_scene.jcp</path>
+		</project>
+	</projects>
+</workspace>
