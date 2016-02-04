@@ -10,12 +10,15 @@ import java.util.Arrays;
 public class Doggies {
 	
 	private Dog[] pups;
-
+	private int size;
+	
 	public Doggies(int size) {
 		pups = new Dog[size];
+		this.size = size;
 	}
 
 	public void set(int spot, int age, String name) {
+		pups = new Dog[size];
 		if (spot <= 0 && spot > pups.length)
 			pups[spot] = new Dog(age, name);
 	}

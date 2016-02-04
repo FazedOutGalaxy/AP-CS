@@ -21,11 +21,13 @@ public class DoggiesRunner {
 			System.out.print("Enter the age :: ");
 			int age = keyboard.nextInt();
 			System.out.print("Enter the name :: ");
-			String name = keyboard.next();
+			String name = keyboard.next().replace('_', ' ');
 			pack.set(i, age, name);
 		}
 		System.out.println("pack :: " + pack);
 		System.out.println("NAME OF OLDEST :: " + pack.getNameOfOldest());
 		System.out.println("NAME OF YOUNGEST :: " + pack.getNameOfYoungest());
+		
+		keyboard.close();
 	}
 }
