@@ -1,67 +1,68 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+package com.alex.apcs.projects.references.list;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Canvas;
 import java.awt.Font;
-import javax.swing.JPanel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
+import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.List;
 
-public class WinterScenePanel extends JPanel implements Runnable
-{
+import javax.swing.JPanel;
+
+import com.alex.apcs.enums.Color;
+
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
+
+public class WinterScenePanel extends JPanel implements Runnable {
+
+	private static final long serialVersionUID = 4698541207498947338L;
 	private List<AbstractShape> shapes;
 	private AbstractShape sMan;
 
-	public WinterScenePanel()
-	{
+	public WinterScenePanel() {
 		setVisible(true);
-		//refer shapes to a new ArrayList of AbstractShape
-
-		//populate the list with 50 unique snowflakes
-
-		//instantiate a snowman
-
+		shapes = new ArrayList<AbstractShape>();
+		for (int i = 0; i < 50; i++) {
+			int y = (int) (Math.random() * 600);
+			int s = (int) (Math.random() * 30) + 20;
+			shapes.add(new SimpleSnowFlake(i * 14, y, s, s));
+		}
+		sMan = new SnowMan(500, 350, 200, 150);
 		new Thread(this).start();
 	}
 
-	public void update(Graphics window)
-	{
+	@Override
+	public void update(Graphics window) {
 		paint(window);
 	}
 
-	public void paint(Graphics window)
-	{
-		window.setColor(Color.BLUE);
-		window.fillRect(0,0,getWidth(), getHeight());
+	@Override
+	public void paint(Graphics window) {
+		window.setColor(Color.BLACK);
+		window.fillRect(0, 0, getWidth(), getHeight());
 		window.setColor(Color.WHITE);
-		window.drawRect(20,20,getWidth()-40,getHeight()-40);
-		window.setFont(new Font("TAHOMA",Font.BOLD,18));
-		window.drawString("MAKE A WINTER SCENE!",40,40);
+		window.drawRect(20, 20, getWidth() - 40, getHeight() - 40);
+		window.setFont(new Font("TAHOMA", Font.BOLD, 18));
+		window.drawString("MAKE A WINTER SCENE!", 40, 40);
 
-		//make the snowman appear
-		//make the snowflakes appear and move down the screen
-		//check to see if any of the snowflakes need to be reset to the top of the screen
+		sMan.draw(window);
+		for (AbstractShape sh : shapes) {
+			sh.moveAndDraw(window);
+			if (sh.getYPos() >= getHeight()) {
+				sh.setYPos(0);
+			}
+		}
 	}
 
-   public void run()
-   {
-   	try
-   	{
-   		while(true)
-   		{
-   		   Thread.currentThread().sleep(35);
-            repaint();
-         }
-      }catch(Exception e)
-      {
-      }
-  	}
+	public void run() {
+		try {
+			while (true) {
+				Thread.sleep(35);
+				repaint();
+			}
+		} catch (Exception e) {
+		}
+	}
 }

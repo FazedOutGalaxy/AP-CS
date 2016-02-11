@@ -1,49 +1,39 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+package com.alex.apcs.projects.references.list;
 
-import static java.lang.System.*;
-
-public class Word
-{
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
+public class Word {
 	private String word;
-   private static String vowels = "AEIOUaeiou";   //only one
+	private static final String VOWELS = "AEIOUaeiou"; // only one
 
-	public Word()
-	{
-
+	public Word() {
+		setWord("Shotgun");
 	}
 
-	public Word(String wrd)
-	{
-
+	public Word(String word) {
+		setWord(word);
 	}
 
-	public void setWord(String wrd)
-	{
-
+	public void setWord(String word) {
+		this.word = word;
 	}
-	
-	public int getNumVowels()
-	{
-		int count=0;
 
-
-
-
-
+	public int getNumVowels() {
+		int count = 0;
+		for (int i = 0; i < word.length(); i++)
+			if (VOWELS.contains(String.valueOf(word.charAt(i))))
+				count++;
 		return count;
 	}
-	
-	public int getLength()
-	{
-		return 0;
+
+	public int getLength() {
+		return word.length();
 	}
 
-	public String toString()
-	{
-	   return "";
+	public String toString() {
+		return word;
 	}
 }

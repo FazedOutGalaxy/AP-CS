@@ -1,26 +1,18 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+package com.alex.apcs.projects.references.list.runners;
+
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.BoxLayout;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class GraphicsRunner extends JFrame
-{
+import com.alex.apcs.projects.references.list.WinterScenePanel;
+
+public class GraphicsRunner extends JFrame {
+	private static final long serialVersionUID = -8393042575962496187L;
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 
-	public GraphicsRunner()
-	{
+	public GraphicsRunner() {
 		super("THE WINTER SCENE PROJECT");
-		setSize(WIDTH,HEIGHT);
+		setSize(WIDTH, HEIGHT);
 
 		getContentPane().add(new WinterScenePanel());
 
@@ -29,8 +21,7 @@ public class GraphicsRunner extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public static void main( String args[] )
-	{
-		GraphicsRunner run = new GraphicsRunner();
+	public static void main(String[] args) {
+		new GraphicsRunner();
 	}
 }

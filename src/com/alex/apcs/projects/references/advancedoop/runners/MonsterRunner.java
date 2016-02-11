@@ -42,5 +42,6 @@ public class MonsterRunner extends ApcsProject {
 		printLine("Monster one"
 				+ ((m1.hasSameName(m2, false)) ? " has " : " does not have ")
 				+ "the same name as Monster two.");
+		scan.close();
 	}
 }
