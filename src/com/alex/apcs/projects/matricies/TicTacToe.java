@@ -1,5 +1,10 @@
 package com.alex.apcs.projects.matricies;
 
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
 public class TicTacToe {
 	private char[][] mat;
 

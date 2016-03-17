@@ -1,27 +1,27 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class - 
-//Lab  -
+package com.alex.apcs.projects.matricies;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-import static java.lang.System.*;
+import com.alex.apcs.abstracts.ApcsProject;
 
-public class ForestRunner
-{
-	public static void main( String args[] ) throws IOException
-	{
-		for( int i = 0; i < 3; i++ )
-		{
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
+public class ForestRunner extends ApcsProject {
+
+	private static final ForestRunner instance = new ForestRunner();
+
+	public static void main(String[] args) {
+		instance.execute();
+	}
+
+	@Override
+	public void execute() {
+		for (int i = 0; i < 3; i++) {
 			Forest woods = new Forest(7, 5);
-			System.out.println( woods + "\n\n");
-			System.out.println( woods.setTrappedToNull() + "\n\n");
-			System.out.println( woods + "\n\n");
+			printLine(woods + "\n\n");
+			printLine(woods.setTrappedToNull() + "\n\n");
+			printLine(woods + "\n\n");
 		}
 	}
 }
-
-
-

@@ -1,11 +1,10 @@
 package com.alex.apcs.projects.matricies;
 
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class - 
-//Lab  -
-
+/**
+ * 
+ * @author Alex Chiang <agentleader1@gmail.com>
+ *
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
