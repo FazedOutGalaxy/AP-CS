@@ -4,6 +4,7 @@ import java.io.PrintStream;
 import java.util.Arrays;
 
 import com.alex.apcs.Beta;
+import com.alex.apcs.abstracts.ApcsProject;
 
 /**
  * 
@@ -17,10 +18,12 @@ public class Main {
 	private static final PrintStream out = System.out;
 	
 	public static void main(String[] args) {
-		int[] b = new int[3];
-		int[] c = b;
-		c[0] = 3;
-		out.println(b[0]);
+		run(1);
+	}
+	
+	public static void run(int i) {
+		ApcsProject.pL("Recursion run " + i);
+		run(++i);
 	}
 	
 	public static void pr(boolean newLine, String str) {

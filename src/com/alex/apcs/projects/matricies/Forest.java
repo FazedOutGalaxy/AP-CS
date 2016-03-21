@@ -12,10 +12,9 @@ public class Forest {
 	private Thing[][] grid;
 	private final String[] typeList = "cat dog tree rock".split(" ");
 	private final String[] nameList = "a b c d e f g h i j k l m n o p q r t s u v w x y z".split(" ");
-	
+
 	public Forest(int rows, int cols) {
 		grid = new Thing[rows][cols];
-		
 
 		// load stuff into the grid
 		for (int r = 0; r < rows; r++) {
@@ -33,21 +32,21 @@ public class Forest {
 			for (int b = 0; b < grid[a].length; b++)
 				if (isTrapped(a, b)) {
 					grid[a][b] = null;
-					return count++;
+					count++;
 				}
 		return count;
 	}
 
 	// if location ! a rock &&
-	// is surrounded by > 5 trees or rocks larger than 10
+	// is surrounded by >= 5 trees or rocks larger than 10
 	public boolean isTrapped(int r, int c) {
-		if (grid[r][c].getType().equals("rock"))
+		if (grid[r][c].getType().equals("rock") || grid[r][c].getType().equals("tree"))
 			return false;
 		else {
 			int traps = 0;
 			for (int a = -1; a < 2; a++) {
 				for (int b = -1; b < 2; b++) {
-					if ((a == 0 && b == 0) || !inBounds(a, b))
+					if ((a == 0 && b == 0) || !inBounds(r + a, c + b) || grid[r + a][c + b] == null)
 						continue;
 					Thing t = grid[r + a][c + b];
 					if (t.getType().equals("tree"))
@@ -57,14 +56,15 @@ public class Forest {
 							traps++;
 				}
 			}
-			return traps > 5;
+			return traps >= 5;
 		}
 	}
 
 	private boolean inBounds(int r, int c) {
-		return (r > grid.length) && (c > grid[r].length);
+		return (r > 0 && r < grid.length) && (c > 0 && c < grid[r].length);
 	}
 
+	@Override
 	public String toString() {
 		String output = "";
 		for (int a = 0; a < grid.length; a++) {
